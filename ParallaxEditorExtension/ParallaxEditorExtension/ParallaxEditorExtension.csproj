@@ -44,9 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ContentTypes.cs" />
-    <Compile Include="IniEditorMargin.cs" />
-    <Compile Include="IniEditorMarginFactory.cs" />
+    <Compile Include="Extension\ContentTypes.cs" />
+    <Compile Include="Extension\IniEditorMargin.cs" />
+    <Compile Include="Extension\IniEditorMarginFactory.cs" />
+    <Compile Include="Editor\ParallaxOutline.xaml.cs">
+      <DependentUpon>ParallaxOutline.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,8 +59,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.html" />
-    <Content Include="stylesheet.css" />
+    <Content Include="Intro\index.html" />
+    <Content Include="Intro\stylesheet.css" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build.Framework" />
@@ -91,6 +94,12 @@
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Editor\ParallaxOutline.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

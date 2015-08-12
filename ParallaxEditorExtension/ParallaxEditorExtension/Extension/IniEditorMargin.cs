@@ -25,7 +25,15 @@ namespace ParallaxEditorExtension
         /// <summary>
         /// A value indicating whether the object is disposed.
         /// </summary>
-        private bool isDisposed;
+        private bool _isDisposed;
+        /// <summary>
+        /// 
+        /// </summary>
+        private IWpfTextView _textView;
+        /// <summary>
+        /// 
+        /// </summary>
+        private ParallaxOutline _outlineControl;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IniEditorMargin"/> class for a given <paramref name="textView"/>.
@@ -33,18 +41,21 @@ namespace ParallaxEditorExtension
         /// <param name="textView">The <see cref="IWpfTextView"/> to attach the margin to.</param>
         public IniEditorMargin(IWpfTextView textView)
         {
-            this.Height = 20; // Margin height sufficient to have the label
+            _textView = textView;
+
+            var c = _textView;
+
+            this.Width = textView.ViewportWidth / 2;
             this.ClipToBounds = true;
-            this.Background = new SolidColorBrush(Colors.LightGreen);
 
-            // Add a green colored label that says "Hello IniEditorMargin"
-            var label = new Label
-            {
-                Background = new SolidColorBrush(Colors.LightGreen),
-                Content = "Hello IniEditorMargin",
-            };
 
-            this.Children.Add(label);
+            //var vm = new ConfigViewModel("", textView.TextSnapshot.GetText());
+
+            _outlineControl = new ParallaxOutline();
+            this.Children.Add(_outlineControl);
+
+            textView.ViewportWidthChanged += OnViewportWidthChanged;
+            textView.TextBuffer.Changed += OnTextBufferChanged;
         }
 
         #region IWpfTextViewMargin
@@ -125,21 +136,31 @@ namespace ParallaxEditorExtension
         /// </summary>
         public void Dispose()
         {
-            if (!this.isDisposed)
+            if (!this._isDisposed)
             {
                 GC.SuppressFinalize(this);
-                this.isDisposed = true;
+                this._isDisposed = true;
             }
         }
 
         #endregion
+
+        private void OnViewportWidthChanged(object sender, EventArgs e)
+        {
+            this.Width = _textView.ViewportWidth / 2;
+        }
+
+        private void OnTextBufferChanged(object sender, Microsoft.VisualStudio.Text.TextContentChangedEventArgs e)
+        {
+            _outlineControl.Content = e.After.GetText();
+        }
 
         /// <summary>
         /// Checks and throws <see cref="ObjectDisposedException"/> if the object is disposed.
         /// </summary>
         private void ThrowIfDisposed()
         {
-            if (this.isDisposed)
+            if (this._isDisposed)
             {
                 throw new ObjectDisposedException(MarginName);
             }
