@@ -9,6 +9,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.VisualStudio.Text.Editor;
+using System.IO;
+using System.Globalization;
 
 namespace ParallaxEditorExtension
 {
@@ -21,18 +23,10 @@ namespace ParallaxEditorExtension
         /// Margin name.
         /// </summary>
         public const string MarginName = "IniEditorMargin";
-
-        /// <summary>
-        /// A value indicating whether the object is disposed.
-        /// </summary>
+        
         private bool _isDisposed;
-        /// <summary>
-        /// 
-        /// </summary>
         private IWpfTextView _textView;
-        /// <summary>
-        /// 
-        /// </summary>
+        private FrameworkElement _viewContainer;
         private ParallaxOutline _outlineControl;
 
         /// <summary>
@@ -41,21 +35,24 @@ namespace ParallaxEditorExtension
         /// <param name="textView">The <see cref="IWpfTextView"/> to attach the margin to.</param>
         public IniEditorMargin(IWpfTextView textView)
         {
-            _textView = textView;
-
-            var c = _textView;
-
-            this.Width = textView.ViewportWidth / 2;
-            this.ClipToBounds = true;
-
-
             //var vm = new ConfigViewModel("", textView.TextSnapshot.GetText());
-
+            
+            _textView = textView;
             _outlineControl = new ParallaxOutline();
-            this.Children.Add(_outlineControl);
+            _viewContainer = (_textView as FrameworkElement).Parent as FrameworkElement;
 
-            textView.ViewportWidthChanged += OnViewportWidthChanged;
+            _viewContainer.LayoutUpdated += OnParentLayoutChanged;
             textView.TextBuffer.Changed += OnTextBufferChanged;
+
+            ClipToBounds = true;
+            Children.Add(_outlineControl);
+
+            OnParentLayoutChanged(null, EventArgs.Empty);
+        }
+
+        private void OnParentLayoutChanged(object sender, EventArgs e)
+        {
+            Width = _viewContainer.ActualWidth / 2;
         }
 
         #region IWpfTextViewMargin
@@ -144,11 +141,6 @@ namespace ParallaxEditorExtension
         }
 
         #endregion
-
-        private void OnViewportWidthChanged(object sender, EventArgs e)
-        {
-            this.Width = _textView.ViewportWidth / 2;
-        }
 
         private void OnTextBufferChanged(object sender, Microsoft.VisualStudio.Text.TextContentChangedEventArgs e)
         {
