@@ -7,6 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Margin="4" Grid.Row="0" Width="Auto" LastChildFill="True">
+            <Button Padding="4,0,4,0" DockPanel.Dock="Right"
+                    Command="{Binding SelectSchema}">...</Button>
+            <TextBlock Text="{Binding SchemaPath}" />
+        </DockPanel>
+        
+        
     </Grid>
 </UserControl>

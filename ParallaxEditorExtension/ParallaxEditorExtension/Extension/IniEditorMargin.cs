@@ -35,10 +35,11 @@ namespace ParallaxEditorExtension
         /// <param name="textView">The <see cref="IWpfTextView"/> to attach the margin to.</param>
         public IniEditorMargin(IWpfTextView textView)
         {
-            //var vm = new ConfigViewModel("", textView.TextSnapshot.GetText());
+            var docPath = textView.TextDataModel.DocumentBuffer.Properties.GetProperty<Microsoft.VisualStudio.Text.ITextDocument>(typeof(Microsoft.VisualStudio.Text.ITextDocument))?.FilePath;
+            var vm = new OutlineViewModel(docPath, textView.TextSnapshot.GetText());
             
             _textView = textView;
-            _outlineControl = new ParallaxOutline();
+            _outlineControl = new ParallaxOutline(vm);
             _viewContainer = (_textView as FrameworkElement).Parent as FrameworkElement;
 
             _viewContainer.LayoutUpdated += OnParentLayoutChanged;

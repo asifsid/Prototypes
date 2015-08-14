@@ -20,9 +20,11 @@ namespace ParallaxEditorExtension
     /// </summary>
     public partial class ParallaxOutline : UserControl
     {
-        public ParallaxOutline()
+        public ParallaxOutline(OutlineViewModel vm)
         {
             InitializeComponent();
+
+            this.DataContext = vm;
         }
     }
 }

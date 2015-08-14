@@ -1,12 +1,13 @@
 ﻿using Microsoft.Win32;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace ParallaxEditorExtension
 {
-    public class OutlineViewModel
+    public class OutlineViewModel : ViewModel
     {
-        private string _bondPath;
+        private string _schemaPath;
 
         public OutlineViewModel(string docPath, string content)
         {
@@ -18,16 +19,37 @@ namespace ParallaxEditorExtension
             }
 
             var schemaPath = match.Groups[1].Value;
-            //if (!System.IO.File.Exists(schemaPath))
-            //{
-            //    return;
-            //}
+            
+            var searchDir = Path.GetDirectoryName(docPath);
+            var schemaDir = Path.GetDirectoryName(docPath);
+            
+            if (schemaPath.StartsWith("..."))
+            {
+                schemaPath = schemaPath.Substring(3);
+                while (searchDir != null)
+                {
+                    if (File.Exists(Path.Combine(searchDir, schemaPath)))
+                    {
+                        break;
+                    }
+                    searchDir = Directory.GetParent(searchDir).FullName;
+                }
+            }
+            schemaPath = Path.Combine(searchDir, schemaPath);
 
             this.SchemaPath = schemaPath;
             this.SelectSchema = Command.Create(OnSelectSchema);
         }
 
-        public string SchemaPath { get; set; }
+        public string SchemaPath
+        {
+            get { return _schemaPath; }
+            set
+            {
+                _schemaPath = value;
+                InvokePropertyChanged(nameof(SchemaPath));
+            }
+        }
 
         public ICommand SelectSchema { get; }
 
@@ -36,7 +58,7 @@ namespace ParallaxEditorExtension
             var dlg = new OpenFileDialog { Filter = "(Bond Files)|*.bond", Title = "Select Bind Schema file" };
             if (dlg.ShowDialog() ?? false)
             {
-                _bondPath = dlg.FileName;
+                    
             }
         }
     }

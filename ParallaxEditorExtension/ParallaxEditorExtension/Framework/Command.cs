@@ -21,11 +21,7 @@ namespace ParallaxEditorExtension
 
         public void RaiseCanExecuteChanged()
         {
-            EventHandler handler = _canExecuteChangedHandler;
-            if (handler != null)
-            {
-                handler(this, EventArgs.Empty);
-            }
+            _canExecuteChangedHandler?.Invoke(this, EventArgs.Empty);
         }
 
         bool ICommand.CanExecute(object parameter)

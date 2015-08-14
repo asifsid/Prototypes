@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Framework\Command.cs" />
     <Compile Include="Editor\OutlineViewModel.cs" />
+    <Compile Include="Framework\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
