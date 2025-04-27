@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;V3</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent Condition="$([System.String]::Copy('$(DefineConstants)').Contains('V1'))">copy $(AssemblyName).dll "$(SolutionDir)C_V1" /Y</PostBuildEvent>
+    <PostBuildEvent Condition="$([System.String]::Copy('$(DefineConstants)').Contains('V2'))">copy $(AssemblyName).dll "$(SolutionDir)C_V2" /Y</PostBuildEvent>
+    <PostBuildEvent Condition="$([System.String]::Copy('$(DefineConstants)').Contains('V3'))">copy $(AssemblyName).dll "$(SolutionDir)C_V3" /Y</PostBuildEvent>
+    <AssemblyTitle>AssemblyC</AssemblyTitle>
+    <Product>AssemblyC</Product>
+    <Copyright>Copyright ©  2020</Copyright>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+  </PropertyGroup>
+</Project>

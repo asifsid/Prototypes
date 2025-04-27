@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>DependentAssemblyTest</AssemblyTitle>
+    <Product>DependentAssemblyTest</Product>
+    <Copyright>Copyright ©  2020</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;Default_LoadContext</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="AssemblyA\**" />
+    <Compile Remove="AssemblyB\**" />
+    <Compile Remove="AssemblyC\**" />
+    <Compile Remove="C_V1\**" />
+    <Compile Remove="C_V2\**" />
+    <Compile Remove="C_V3\**" />
+    <Compile Remove="HostProcess\**" />
+    <EmbeddedResource Remove="AssemblyA\**" />
+    <EmbeddedResource Remove="AssemblyB\**" />
+    <EmbeddedResource Remove="AssemblyC\**" />
+    <EmbeddedResource Remove="C_V1\**" />
+    <EmbeddedResource Remove="C_V2\**" />
+    <EmbeddedResource Remove="C_V3\**" />
+    <EmbeddedResource Remove="HostProcess\**" />
+    <None Remove="AssemblyA\**" />
+    <None Remove="AssemblyB\**" />
+    <None Remove="AssemblyC\**" />
+    <None Remove="C_V1\**" />
+    <None Remove="C_V2\**" />
+    <None Remove="C_V3\**" />
+    <None Remove="HostProcess\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Condition="$([System.String]::Copy('$(DefineConstants)').Contains('Default_LoadContext'))" Include="HostProcess\HostProcess.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ClassB\Class1.cs" />
+    <Compile Remove="ClassB\Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+</Project>
