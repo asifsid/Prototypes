@@ -1,0 +1,368 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=Windows-1252"><meta name="Generator" content="Microsoft Word 15 (filtered medium)"><!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+pre
+	{mso-style-priority:99;
+	mso-style-link:"HTML Preformatted Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.MsoSmartlink
+	{mso-style-priority:99;
+	color:blue;
+	background:#F3F2F1;
+	text-decoration:underline;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-priority:99;
+	mso-style-link:"HTML Preformatted";
+	font-family:"Courier New";}
+p.xmsonormal, li.xmsonormal, div.xmsonormal
+	{mso-style-name:x_msonormal;
+	margin:0in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.EmailStyle25
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:906184727;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-949994266 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:1446340603;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1643484942 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1484664139;
+	mso-list-template-ids:-942898124;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:1555197310;
+	mso-list-template-ids:-1201614620;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]--></head><body lang="EN-US" link="blue" vlink="#954F72" style="word-wrap:break-word"><div class="WordSection1"><p class="MsoNormal">Thank you.<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">ScaleGroupNumberFullName: <span style="font-size:10.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#212529;background:white">TIECRMLIVESG5200</span><o:p></o:p></p><p class="MsoNormal">ScaleGroupId: e1f0d3bf-0200-0000-0200-000000000000<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><div><div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in 0in 0in"><p class="MsoNormal"><b>From:</b> Gavin Poe &lt;gavinpoe@microsoft.com&gt; <br><b>Sent:</b> Wednesday, October 27, 2021 5:48 PM<br><b>To:</b> Asif Siddiqi &lt;asifsid@microsoft.com&gt;; Bertrand Desmarest &lt;bertd@microsoft.com&gt;; Santosh Karale &lt;Santosh.Karale@microsoft.com&gt;<br><b>Cc:</b> Josina Joy &lt;Josina.Joy@microsoft.com&gt;; Ramya Subramanya &lt;Ramya.Subramanya@microsoft.com&gt;; Eduardo Piva &lt;edpiva@microsoft.com&gt;; Lala Sushant Srivastava &lt;Sushant.Srivastava@microsoft.com&gt;; Ravindra Upadhya &lt;Ravindra.R.Upadhya@microsoft.com&gt;<br><b>Subject:</b> RE: On-Behalf-Of token<o:p></o:p></p></div></div><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Hi Bertrand,<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">This should be working for you now in TIP. It should work for OnlineArca machines in a few days after new settings are deployed. If you send me the Scalegroup name for your machine I can get it working now.<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Best,<o:p></o:p></p><p class="MsoNormal">Gavin<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in 0in 0in"><p class="MsoNormal"><b>From: </b><a href="mailto:asifsid@microsoft.com">Asif Siddiqi</a><br><b>Sent: </b>Monday, October 25, 2021 2:20 PM<br><b>To: </b><a href="mailto:bertd@microsoft.com">Bertrand Desmarest</a>; <a href="mailto:Santosh.Karale@microsoft.com">Santosh Karale</a>; <a href="mailto:gavinpoe@microsoft.com">Gavin Poe</a><br><b>Cc: </b><a href="mailto:Josina.Joy@microsoft.com">Josina Joy</a>; <a href="mailto:Ramya.Subramanya@microsoft.com">Ramya Subramanya</a>; <a href="mailto:edpiva@microsoft.com">Eduardo Piva</a>; <a href="mailto:Sushant.Srivastava@microsoft.com">Lala Sushant Srivastava</a>; <a href="mailto:Ravindra.R.Upadhya@microsoft.com">Ravindra Upadhya</a><br><b>Subject: </b>RE: On-Behalf-Of token<o:p></o:p></p></div><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">+<a id="OWAAM07FEC8F93A0B4666B13EC65F1420E2FB" href="mailto:Santosh.Karale@microsoft.com"><span style="font-family:&quot;Calibri&quot;,sans-serif;text-decoration:none">@Santosh Karale</span></a>/<a id="OWAAM4F7DC2F0F2D44A34B77262B5E720DD43" href="mailto:gavinpoe@microsoft.com"><span style="font-family:&quot;Calibri&quot;,sans-serif;text-decoration:none">@Gavin Poe</span></a><o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><div><div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in 0in 0in"><p class="MsoNormal"><b>From:</b> Bertrand Desmarest &lt;<a href="mailto:bertd@microsoft.com">bertd@microsoft.com</a>&gt; <br><b>Sent:</b> Monday, October 25, 2021 2:05 PM<br><b>To:</b> Asif Siddiqi &lt;<a href="mailto:asifsid@microsoft.com">asifsid@microsoft.com</a>&gt;<br><b>Cc:</b> Josina Joy &lt;<a href="mailto:Josina.Joy@microsoft.com">Josina.Joy@microsoft.com</a>&gt;; Ramya Subramanya &lt;<a href="mailto:Ramya.Subramanya@microsoft.com">Ramya.Subramanya@microsoft.com</a>&gt;; Eduardo Piva &lt;<a href="mailto:edpiva@microsoft.com">edpiva@microsoft.com</a>&gt;; Lala Sushant Srivastava &lt;<a href="mailto:Sushant.Srivastava@microsoft.com">Sushant.Srivastava@microsoft.com</a>&gt;; Ravindra Upadhya &lt;<a href="mailto:Ravindra.R.Upadhya@microsoft.com">Ravindra.R.Upadhya@microsoft.com</a>&gt;<br><b>Subject:</b> RE: On-Behalf-Of token<o:p></o:p></p></div></div><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Hi Asif,<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Requesting your help to whitelist the following plugins:<o:p></o:p></p><ul style="margin-top:0in" type="disc"><li class="MsoListParagraph" style="margin-left:0in;mso-list:l0 level1 lfo3">Microsoft.Xrm.DataProvider.Connector.Plugins.ConnectorDeletePlugin<o:p></o:p></li><li class="MsoListParagraph" style="margin-left:0in;mso-list:l0 level1 lfo3">Microsoft.Xrm.DataProvider.Connector.Plugins.ConnectorUpdatePlugin<o:p></o:p></li><li class="MsoListParagraph" style="margin-left:0in;mso-list:l0 level1 lfo3">Microsoft.Xrm.DataProvider.Connector.Plugins.ConnectorCreatePlugin<o:p></o:p></li><li class="MsoListParagraph" style="margin-left:0in;mso-list:l0 level1 lfo3">Microsoft.Xrm.DataProvider.Connector.Plugins.ConnectorRetrievePlugin<o:p></o:p></li><li class="MsoListParagraph" style="margin-left:0in;mso-list:l0 level1 lfo3">Microsoft.Xrm.DataProvider.Connector.Plugins.ConnectorRetrieveMultiplePlugin<o:p></o:p></li></ul><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Scope:<o:p></o:p></p><ul style="margin-top:0in" type="disc"><li class="MsoListParagraph" style="margin-left:0in;mso-list:l1 level1 lfo6"><span style="font-size:9.0pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#212121;background:white"><a href="https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fapihub.azure.com%2F&amp;data=04%7C01%7Casifsid%40microsoft.com%7C83832e79c0904d5927bf08d99a271745%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637710314967838538%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=LVjGgqQvCe1%2FDNHeSl7IDbTdFCW7nd5nmb2AVvsPbY8%3D&amp;reserved=0" originalsrc="https://apihub.azure.com/" shash="EhPojRHN7e8KczcRCdlsJ3h0elVAUsPqw0JgfnSpYOQG1DIf1NOuCZrbd4ZaKtyQLrHnDh+B58vo9o39hccRwD21LiFv97CxQTNTgm9cVgOezGVDTp8RHmKFTKrIbDS+jB6cEnU0JTIlP3qidB45asj8r5zhVcU/3xVSyck2tRo=">https://apihub.azure.com</a></span><o:p></o:p></li></ul><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">We would like to test this on Online Arca and TIP.<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Please let me know if anything else is needed.<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Thank you,<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Bert<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><div><div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in 0in 0in"><p class="MsoNormal"><b>From:</b> Asif Siddiqi &lt;<a href="mailto:asifsid@microsoft.com"><span style="color:#0563C1">asifsid@microsoft.com</span></a>&gt; <br><b>Sent:</b> Thursday, October 14, 2021 6:08 PM<br><b>To:</b> Bertrand Desmarest &lt;<a href="mailto:bertd@microsoft.com"><span style="color:#0563C1">bertd@microsoft.com</span></a>&gt;; Josina Joy &lt;<a href="mailto:Josina.Joy@microsoft.com"><span style="color:#0563C1">Josina.Joy@microsoft.com</span></a>&gt;; Ramya Subramanya &lt;<a href="mailto:Ramya.Subramanya@microsoft.com"><span style="color:#0563C1">Ramya.Subramanya@microsoft.com</span></a>&gt;; Eduardo Piva &lt;<a href="mailto:edpiva@microsoft.com"><span style="color:#0563C1">edpiva@microsoft.com</span></a>&gt;; Lala Sushant Srivastava &lt;<a href="mailto:Sushant.Srivastava@microsoft.com"><span style="color:#0563C1">Sushant.Srivastava@microsoft.com</span></a>&gt;; Ravindra Upadhya &lt;<a href="mailto:Ravindra.R.Upadhya@microsoft.com"><span style="color:#0563C1">Ravindra.R.Upadhya@microsoft.com</span></a>&gt;<br><b>Subject:</b> Re: On-Behalf-Of token<o:p></o:p></p></div></div><p class="MsoNormal"><o:p>&nbsp;</o:p></p><div><p class="MsoNormal" style="margin-bottom:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif;color:black">Hi Bertrand, <o:p></o:p></span></p></div><div><p class="MsoNormal" style="margin-bottom:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif;color:black">Yes we'd need to configure your plug in assembly (fullname) and the target scopes to allow the OBO exchange.<o:p></o:p></span></p></div><div><p class="MsoNormal" style="margin-bottom:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif;color:black">This is only available in Sandbox and sync plug in. Async is not supported by design. Let's discuss if your requirements are different. You'd have to consider alternate&nbsp; Auth options for async.<o:p></o:p></span></p></div><div><p class="MsoNormal" style="margin-bottom:12.0pt"><span style="font-family:&quot;Arial&quot;,sans-serif;color:black">Thanks, <o:p></o:p></span></p></div><div><p class="MsoNormal"><span style="font-family:&quot;Arial&quot;,sans-serif;color:black">Asif<o:p></o:p></span></p></div><div><p class="MsoNormal"><o:p>&nbsp;</o:p></p></div><div id="ms-outlook-mobile-signature"><p class="MsoNormal">Get <a href="https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Faka.ms%2FAAb9ysg&amp;data=04%7C01%7Casifsid%40microsoft.com%7C83832e79c0904d5927bf08d99a271745%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637710314967848494%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=ZXnIFUY6Egdld1CfVJTIu23BY%2Bvect%2B9%2BynaTx51jfQ%3D&amp;reserved=0" originalsrc="https://aka.ms/AAb9ysg" shash="AxZSPf1wq5yjdd8R8dgtEgAJ7uYWoacCd4DfxkfTzGZXOILaD1yPeQUpMoPMmcalO4vOYKBGVcFQUvnCbo9bMrRSXIHYZsay56QZl3jEFS5gu03Q7+bvKY6E5NpAffoWUFqRJASjZw4Upfn2XXJeaEGQmlAqSEZPxTT0ZsTrPRw="><span style="color:#0563C1">Outlook for Android</span></a><o:p></o:p></p></div><p class="MsoNormal" align="center" style="text-align:center"><img border="0" width="347" height="1" style="width:3.6145in;height:.0104in" id="Horizontal_x0020_Line_x0020_1" src="cid:image002.png@01D7CBD5.475DC840"><o:p></o:p></p><div id="divRplyFwdMsg"><p class="MsoNormal"><b><span style="color:black">From:</span></b><span style="color:black"> Bertrand Desmarest &lt;<a href="mailto:bertd@microsoft.com"><span style="color:#0563C1">bertd@microsoft.com</span></a>&gt;<br><b>Sent:</b> Thursday, October 14, 2021 5:00:37 PM<br><b>To:</b> Josina Joy &lt;<a href="mailto:Josina.Joy@microsoft.com"><span style="color:#0563C1">Josina.Joy@microsoft.com</span></a>&gt;; Ramya Subramanya &lt;<a href="mailto:Ramya.Subramanya@microsoft.com"><span style="color:#0563C1">Ramya.Subramanya@microsoft.com</span></a>&gt;; Eduardo Piva &lt;<a href="mailto:edpiva@microsoft.com"><span style="color:#0563C1">edpiva@microsoft.com</span></a>&gt;; Asif Siddiqi &lt;<a href="mailto:asifsid@microsoft.com"><span style="color:#0563C1">asifsid@microsoft.com</span></a>&gt;; Lala Sushant Srivastava &lt;<a href="mailto:Sushant.Srivastava@microsoft.com"><span style="color:#0563C1">Sushant.Srivastava@microsoft.com</span></a>&gt;; Ravindra Upadhya &lt;<a href="mailto:Ravindra.R.Upadhya@microsoft.com"><span style="color:#0563C1">Ravindra.R.Upadhya@microsoft.com</span></a>&gt;<br><b>Subject:</b> RE: On-Behalf-Of token</span> <o:p></o:p></p><div><p class="MsoNormal">&nbsp;<o:p></o:p></p></div></div><div><div><pre style="margin-bottom:12.0pt"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">The wiki says that IOnBehalfOfTokenService is available only for synchronous plugins. Our use case is asynch…</span><o:p></o:p></pre><pre style="margin-bottom:12.0pt"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">I tried to test it in TIE (OnlineArca), but wasn’t able to get the service. My .dll was fully signed. I see that there is a whitelisting requirement with the Sandbox team. Do you know who could guide me so that we can test it?</span><o:p></o:p></pre><pre style="margin-bottom:12.0pt"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Thank you,</span><o:p></o:p></pre><pre style="margin-bottom:12.0pt"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Bertrand</span><o:p></o:p></pre><p class="xmsonormal">&nbsp;<o:p></o:p></p><p class="xmsonormal">&nbsp;<o:p></o:p></p><div><div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in 0in 0in"><p class="xmsonormal"><b>From:</b> Josina Joy &lt;<a href="mailto:Josina.Joy@microsoft.com">Josina.Joy@microsoft.com</a>&gt; <br><b>Sent:</b> Wednesday, October 13, 2021 9:37 AM<br><b>To:</b> Ramya Subramanya &lt;<a href="mailto:Ramya.Subramanya@microsoft.com">Ramya.Subramanya@microsoft.com</a>&gt;; Eduardo Piva &lt;<a href="mailto:edpiva@microsoft.com">edpiva@microsoft.com</a>&gt;; Asif Siddiqi &lt;<a href="mailto:asifsid@microsoft.com">asifsid@microsoft.com</a>&gt;; Lala Sushant Srivastava &lt;<a href="mailto:Sushant.Srivastava@microsoft.com">Sushant.Srivastava@microsoft.com</a>&gt;; Ravindra Upadhya &lt;<a href="mailto:Ravindra.R.Upadhya@microsoft.com">Ravindra.R.Upadhya@microsoft.com</a>&gt;<br><b>Cc:</b> Bertrand Desmarest &lt;<a href="mailto:bertd@microsoft.com">bertd@microsoft.com</a>&gt;<br><b>Subject:</b> RE: On-Behalf-Of token<o:p></o:p></p></div></div><p class="xmsonormal">&nbsp;<o:p></o:p></p><p class="xmsonormal">OBOTokenProvider interface is available to use inside Sandbox plugins. Wiki - <a href="https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdev.azure.com%2Fdynamicscrm%2FOneCRM%2F_wiki%2Fwikis%2FOneCRM.wiki%2F23515%2FOn-Behalf-Of-Token-Service&amp;data=04%7C01%7Casifsid%40microsoft.com%7C83832e79c0904d5927bf08d99a271745%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637710314967858451%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=dEKG3DWzWOzYJgzQvASVPJhl%2BsKu2e9ol7KVoIE2u8s%3D&amp;reserved=0" originalsrc="https://dev.azure.com/dynamicscrm/OneCRM/_wiki/wikis/OneCRM.wiki/23515/On-Behalf-Of-Token-Service" shash="Buojtr3ciBcYnHuQmq4/expe7B5+gPZM8IYJO8ZwOXOXHkUnzxCvQNPHFdFBqHCBIMNX/sNfyG/QAw9KtmdkUwlew+ZqnXUZmosnYJUcAEUeKeEwBGz4N7ibaWn09m3DfhLjRYSfDcPCcCsgl91dhu1PNtoMf4q2vMv7wk8WdsA=">On Behalf Of Token Service - Overview (azure.com)</a><o:p></o:p></p><p class="xmsonormal">&nbsp;<o:p></o:p></p><p class="xmsonormal">+<a id="OWAAMC8007CFF16BF48469E13602A5959B46D" href="mailto:asifsid@microsoft.com"><span style="font-family:&quot;Calibri&quot;,sans-serif;text-decoration:none">@Asif Siddiqi</span></a>, <a id="OWAAM2091AEE947244A69993ED8925D8E0D5C" href="mailto:Sushant.Srivastava@microsoft.com"><span style="font-family:&quot;Calibri&quot;,sans-serif;text-decoration:none">@Lala Sushant Srivastava</span></a>, <a id="OWAAM30831BA7F63C4C28867C925FE4126E40" href="mailto:Ravindra.R.Upadhya@microsoft.com"><span style="font-family:&quot;Calibri&quot;,sans-serif;text-decoration:none">@Ravindra Upadhya</span></a><o:p></o:p></p><p class="xmsonormal">&nbsp;<o:p></o:p></p><p class="xmsonormal">Thanks<o:p></o:p></p><p class="xmsonormal">Josina<o:p></o:p></p><p class="xmsonormal">&nbsp;<o:p></o:p></p><div><div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in 0in 0in"><p class="xmsonormal"><b>From:</b> Ramya Subramanya &lt;<a href="mailto:Ramya.Subramanya@microsoft.com">Ramya.Subramanya@microsoft.com</a>&gt; <br><b>Sent:</b> Monday, October 11, 2021 2:00 PM<br><b>To:</b> Josina Joy &lt;<a href="mailto:Josina.Joy@microsoft.com">Josina.Joy@microsoft.com</a>&gt;; Eduardo Piva &lt;<a href="mailto:edpiva@microsoft.com">edpiva@microsoft.com</a>&gt;<br><b>Cc:</b> Bertrand Desmarest &lt;<a href="mailto:bertd@microsoft.com">bertd@microsoft.com</a>&gt;<br><b>Subject:</b> On-Behalf-Of token<o:p></o:p></p></div></div><p class="xmsonormal">&nbsp;<o:p></o:p></p><p class="xmsonormal">Hi Josina,<o:p></o:p></p><p class="xmsonormal">We are building an Entity Data Provider that would need to access the connections to external data sources on behalf of the user. <a id="OWAAM564251E30D75494CAC335DA72D97A379" href="mailto:edpiva@microsoft.com"><span style="font-family:&quot;Calibri&quot;,sans-serif;text-decoration:none">@Eduardo</span></a> mentioned that you were prototyping this feature. I wanted to check if this feature is available for us to try? More on what we are trying <a href="https://nam06.safelinks.protection.outlook.com/ap/w-59584e83/?url=https%3A%2F%2Fmicrosoft-my.sharepoint.com%2F%3Aw%3A%2Fp%2Frakukeha%2FETo0djwJIlBFiF5F6tMMkakBZeiJPDUibNq6H0jyrAnNPA%3Fe%3D16emBI&amp;data=04%7C01%7Casifsid%40microsoft.com%7C83832e79c0904d5927bf08d99a271745%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637710314967858451%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=Mw6HU70p%2FHZd7Jl7i%2B7OptN3PxDZRYPKIX6qHK%2B5%2FNw%3D&amp;reserved=0" originalsrc="https://microsoft-my.sharepoint.com/:w:/p/rakukeha/ETo0djwJIlBFiF5F6tMMkakBZeiJPDUibNq6H0jyrAnNPA?e=16emBI" shash="XUJNfBi9W80vVHfQgKZa0EGIiymr1Qg//hK7Xg723W5jJA4S7k1Y9iLkK2SpGEbMCP1yUtzpdMIi2jsjfkf+Tr/5Lhl72Ztz8uf3k1qkmxPTYt815OdxY+iMFefCqXcJU22ZAKTeFded7oXToJNKWAZDS68MWWpxdBRP8zRLrPE="><span class="MsoSmartlink"><img border="0" width="16" height="16" style="width:.1666in;height:.1666in" id="x_Picture_x0020_1" src="cid:image003.png@01D7CBD5.475DC840" alt="&#8203;docx icon">&nbsp;here</span></a>.<o:p></o:p></p><p class="xmsonormal">Thanks,<o:p></o:p></p></div></div><p class="xmsonormal">Ramya<o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p></div></body></html>
