@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="InvalidRecurrenceRule"><value>Error in RecurrencePatternFactory.</value></data>
+  <data name="InvalidGuidParameter"><value>Expected non-empty Guid.</value></data>
+  <data name="TextAnalyticsAzureSchedulerError"><value>Dynamics 365 failed to connect with the Azure text analytics service. Please try again and if the problem persists contact your system administrator.</value></data>
+  <data name="CollectionIsEmpty"><value>Expected non-empty collection.</value></data>
+  <data name="InvalidOperation"><value>Invalid Operation performed.</value></data>
+  <data name="AccessTokenExpired"><value>The requested resource requires authentication.</value></data>
+  <data name="CannotDoOperation"><value>Cannot do operation {0} as {1} and {2} are not compatible for {0}</value></data>
+  <data name="InvalidStateCodeStatusCode"><value>{0} is not a valid state code on {1} with Id {2}.</value></data>
+  <data name="InvalidStatusCodeForStateCode"><value>{0} is not a valid status code for state code {1} State. {2} on {3} with Id {4}.</value></data>
+  <data name="Forbidden"><value>The server refuses to fulfill the request.</value></data>
+  <data name="CannotSetInexistentParameter"><value>Unable to set parameter '{0}' in parameter collection.</value></data>
+  <data name="HierarchyPathEllipsis"><value>...</value></data>
+  <data name="ObjectDoesNotExist"><value>The specified object was not found.</value></data>
+  <data name="BadRequest"><value>The request could not be understood by the server.</value></data>
+  <data name="InvalidPointer"><value>The object is disposed.</value></data>
+  <data name="MissingUomScheduleId"><value>The unit schedule id is missing.</value></data>
+  <data name="NoIdentityMap"><value>Identity map  is not present between entities {0} and {1}</value></data>
+  <data name="NoConversionWillHappenForEntityWithoutAttributes"><value>No conversion will happen for {0} as entity doesn't contain the attribute</value></data>
+  <data name="InvalidParameter"><value>Parameter value {1} is not valid for parameter type {0}</value></data>
+  <data name="ContextTargetNotPresentOrNotEntityType"><value>Context target is not present or its not a EntityReference type</value></data>
+  <data name="InvalidProduct"><value>You can't add a product family.</value></data>
+  <data name="AzureServiceConnectionTypeNotSupported"><value>The azure service connection type with type value of {0} is not supported.</value></data>
+  <data name="unManagedidsdataaccessunexpected"><value>Unexpected error in data access.  DB Connection may not have been opened successfully.</value></data>
+  <data name="StringIsEmpty"><value>Expected non-empty string.</value></data>
+  <data name="TextAnalyticsFeatureNotEnabled"><value>The Azure Text Analytics feature isn’t activated. The system administrator must activate this feature and set up the required configuration.</value></data>
+  <data name="InvalidUnitForProduct"><value>The specified line item unit '{0}'  is not in default uomschedule unit group '{1}' of the product '{2}' </value></data>
+  <data name="ProductDoesNotExist"><value>The product does not exist.</value></data>
+  <data name="AzureOperationResponseTimedOut"><value>An Azure operation request did not return a response within stated timeout period. Retry the operation or increase timeout provided for the operation.</value></data>
+  <data name="InvalidArgument"><value>Invalid argument.</value></data>
+  <data name="ContextOutputParameterMissingOrNull"><value>Output Parameter {0} is either missing or present as null in the plugin context.</value></data>
+  <data name="ProductKitLoopBeingCreated"><value>You can’t add a kit to itself.</value></data>
+  <data name="UpdatePricingErrorCodeMessage"><value>"Updating the 'pricingerrorcode' entity field with the new error code {0}"</value></data>
+  <data name="LocalContextNotSpecified"><value>Plug-in local context was not specified.</value></data>
+  <data name="StringIsNotEmpty"><value>Expected empty string.</value></data>
+  <data name="NetworkIssue"><value>Request failed due to unknown network issues or GateWay issues or server issues.</value></data>
+  <data name="LoopDetectionFailed"><value>Failure in loop detection.</value></data>
+  <data name="CannotConvertAttributes"><value>Unable to convert sourceAttributeType:{0}  to targetAttributeType:{1}</value></data>
+  <data name="ProductKitLoopExists"><value>Loop exists in the kit hierarchy.</value></data>
+  </root>

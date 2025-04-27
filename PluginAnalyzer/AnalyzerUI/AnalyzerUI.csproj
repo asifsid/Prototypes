@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="4dszx1na.2vu~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PluginAnalyzer\PluginAnalyzer.csproj" />
+  </ItemGroup>
+
+</Project>

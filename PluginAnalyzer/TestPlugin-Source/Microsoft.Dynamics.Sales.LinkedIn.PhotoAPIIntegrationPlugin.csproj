@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Microsoft.Dynamics.Sales.LinkedIn.PhotoAPIIntegrationPlugin</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net462</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>Preview</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Microsoft\IdentityModel\resources" />
+    <None Remove="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignIn.bmp" />
+    <None Remove="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignIn.png" />
+    <None Remove="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignInButton.png" />
+    <None Remove="Microsoft\IdentityModel\Web\Controls\SignInStatus.bmp" />
+    <None Remove="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignInStatusSignIn.png" />
+    <None Remove="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignInStatusSignOut.png" />
+    <None Remove="Microsoft\IdentityModel\Web\Controls\SignInStatusSignOutCleanup.gif" />
+    <None Remove="Microsoft\IdentityModel\Web\Controls\FederatedPassiveTokenService.bmp" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\resources" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignIn.bmp" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignIn.png" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignInButton.png" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\Web\Controls\SignInStatus.bmp" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignInStatusSignIn.png" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\Web\Controls\FederatedPassiveSignInStatusSignOut.png" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\Web\Controls\SignInStatusSignOutCleanup.gif" />
+    <EmbeddedResource Include="Microsoft\IdentityModel\Web\Controls\FederatedPassiveTokenService.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xrm.Sdk" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.Crm.Sdk.Proxy" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="Microsoft.Xrm.Kernel.Contracts" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <Reference Include="Microsoft.Xrm.Telemetry" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Analyze": {
+      "commandName": "Project",
+      "commandLineArgs": "..\\..\\..\\..\\SB.Marketing.Actions"
+    }
+  }
+}
