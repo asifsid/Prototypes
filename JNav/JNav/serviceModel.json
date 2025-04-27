@@ -1,0 +1,1067 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://schema.dsm.microsoft.com/servicemodel/v3.0/serviceModel.json#",
+  "title": "DSM definition",
+  "description": "JSON schema for Declarative Service Model (DSM) definition.",
+
+  /* ------------------------------------------------------------------
+   * Note: The schema uses data references heavily (referencing
+   * another object in the same document by name. The current  
+   * Json schema version (draft-04) does not support data referencing.
+   * Thus, a code level validation for all references is necessary and 
+   * and makes authoring error prone, in the absense of intellisence.
+   * The proposed keyword $data will solve this in version 5. 
+   * ------------------------------------------------------------------
+   */
+
+  /* ------------------------------------------------------------------
+   * TODO:
+   * 
+   * - add descriptions to entities where makes sense
+   * - Path/Owner
+   * - Current Version on Service?
+   * - Extensibility
+   * - 
+   * ------------------------------------------------------------------
+   */
+  "properties": {
+
+  },
+  "definitions": {
+    "idFormat": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{6}$",
+      "description": "An identifer unique within a ServiceModel."
+    },
+    "idReference": {
+      "type": "string",
+      "pattern": "^~/[A-Fa-f0-9]{6}$",
+      "description": "An identifer unique within a ServiceModel."
+    },
+    "internalFullLink": {
+      "type": "string",
+      "pattern": "^dsm://self/[^/~]+$",
+      "description": "An full link to another object in the same service model."
+    },
+    "internalReference": {
+      "type": "string",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/idReference"
+        },
+        {
+          "$ref": "#/definitions/internalFullLink"
+        }
+      ],
+      "description": "A reference to another object within service model."
+    },
+    /* -------------------------------------------------------------
+     * Logical Model
+     * -------------------------------------------------------------
+     */
+    "tier": {
+      "type": "object",
+      "description": "Logical grouping of roles in service architecture",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "pattern": "^[^/~]+$",
+          "description": "Tier name. Must be unique within ServiceDefinition."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the tier."
+        }
+      },
+      "required": [ "name" ],
+      "additionalProperties": true
+    },
+    "role": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "pattern": "^[^/~]+$",
+          "description": "Role name. Must be unique within ServiceDefinition."
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Web",
+            "Worker",
+            "Compute",
+            "Blob",
+            "NoSql",
+            "Sql",
+            "Cache",
+            "Queue",
+            "Relay",
+            "BigData",
+            "Generic"
+          ],
+          "description": "Role type"
+        },
+        "tier": {
+          "type": "string",
+          "description": "(Optional) Refers to parent Tier by name",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/internalReference"
+            },
+            {
+              "$ref": "#/definitions/tier/properties/name"
+            }
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the role."
+        },
+        "technology": {
+          "type": "string",
+          "description": "(Optional)The technology used to implement the role within the service.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "enum": [ "Custom", "Cosmos" ]
+            },
+            {
+              "type": "string",
+              "enum": [
+                "Autopilot",
+                "Autopilot/Sql"
+              ]
+            },
+            {
+              "type": "string",
+              "enum": [
+                "Azure/AnalysisServices",
+                "Azure/AppService",
+                "Azure/CloudService",
+                "Azure/CognitiveServices",
+                "Azure/DataFactory",
+                "Azure/DocumentDB",
+                "Azure/Functions",
+                "Azure/MediaServices",
+                "Azure/NotificationHub",
+                "Azure/PowerBI",
+                "Azure/RedisCache",
+                "Azure/Scheduler",
+                "Azure/Search",
+                "Azure/ServiceBus",
+                "Azure/ServiceFabric",
+                "Azure/Sql",
+                "Azure/Storage",
+                "Azure/VirtualMachines",
+                "Azure/VirtualMachineScaleSets"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [ "name", "type" ],
+      "additionalProperties": true
+    },
+    "externalRole": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "$ref": "#/definitions/role/properties/name",
+          "description": "Name given to the external role in your service."
+        },
+        "type": {
+          "type": "string",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "Generic",
+                "Dsm",
+                "AzureAD"
+              ],
+              "description": "Type of external role."
+            }
+          ]
+        },
+        "tier": {
+          "type": "string",
+          "description": "(Optional) Refers to parent Tier by name"
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the role."
+        },
+        "roleId": {
+          "type": "string",
+          "description": "Role identifier to the external role."
+        }
+      },
+      "required": [ "name", "type" ]
+    },
+    /* -------------------------------------------------------------
+     * Extensibility: In future versions, Role should
+     * be extented to specific role types to define type specific 
+     * properties. The type specic properties should follow 
+     * the naming convention: RoleType-ProeprtyName. 
+     * -------------------------------------------------------------
+    "XYZRole": {
+      "allOf": [
+        { "$ref": "#/definitions/role" },
+        { "properties": { 
+            "xyz-property-foo": { ... },
+            "xyz-property-bar": { ... },
+          } 
+        }
+      ]
+    }
+    */
+    "roleLinkTarget": {
+      "type": "object",
+      "description": "The properties for a target of a call.",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "target": {
+          "type": "string",
+          "description": "Refers to a role called from the source.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/internalReference"
+            },
+            {
+              "$ref": "#/definitions/role/properties/name"
+            }
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional)A description for the call."
+        }
+      },
+      "required": [ "target" ],
+      "additionalItems": false
+    },
+    "roleLink": {
+      "type": "object",
+      "description": "A description of the call dependency between roles",
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Refers to the role initiating the call.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/internalReference"
+            },
+            {
+              "$ref": "#/definitions/role/properties/name"
+            }
+          ]
+        },
+        "targets": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/roleLinkTarget" },
+          "description": "Refers to the roles that are called from the source."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the role link."
+        }
+      },
+      "required": [ "source", "targets" ],
+      "additionalItems": false
+    },
+    "serviceDefinition": {
+      "type": "object",
+      "description": "A versioned snapshot of the service composition.",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "version": {
+          "type": "string",
+          "format": "regex",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+          "description": "Semantic-version format for the Service-Definition in the format: Major.Minor.(0|Patch). Ref: http://semver.org/."
+        },
+        "tiers": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/tier" }
+        },
+        "roles": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/role" }
+        },
+        "roleLinks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/roleLink" }
+        },
+        "graphLayout": {
+          "type": "string",
+          "description": "(Optional) The graphical representation of the service."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the service definition."
+        }
+      },
+      "required": [ "version" ],
+      "additionalProperties": true
+    },
+    /* -------------------------------------------------------------
+     * Physical Model
+     * -------------------------------------------------------------
+     */
+    "trafficManager": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "pattern": "^[^/~]+$",
+          "description": "Traffic manager name. Must be unique within stamp."
+        },
+        "technology": {
+          "type": "string",
+          "description": "(Optional)The technology used to implement the traffic manager within the service.",
+          "enum": [ "Azure/TrafficManager", "Akamai/TrafficManager", "Gtm" ]
+        },
+        "boundary": {
+          "type": "string",
+          "description": "(Optional) Refers to parent Boundary by name or internal reference. ",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/boundary/properties/name"
+            },
+            {
+              "$ref": "#/definitions/internalReference"
+            }
+          ]
+        },
+        "resource": {
+          "type": "string",
+          "description": "Resource-id that is bound to this traffic manager."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the traffic manager."
+        }
+      },
+      "required": [ "name" ]
+    },
+    "cdn": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "pattern": "^[^/~]+$",
+          "description": "Content delivery network(cdn) name. Must be unique within stamp."
+        },
+        "technology": {
+          "type": "string",
+          "description": "(Optional)The technology used to implement the cdn within the service.",
+          "enum": [ "Azure/Cdn", "Akamai/Cdn", "Amazon/CloudFront" ]
+        },
+        "boundary": {
+          "type": "string",
+          "description": "(Optional) Refers to parent Boundary by name or internal reference",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/boundary/properties/name"
+            },
+            {
+              "$ref": "#/definitions/internalReference"
+            }
+          ]
+        },
+        "resource": {
+          "type": "string",
+          "description": "Resource-id that is bound to this traffic manager."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the traffic manager."
+        }
+      },
+      "required": [ "name" ]
+    },
+    "roleStamp": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "name": {
+          "type": "string",
+          "maxLength": 60,
+          "pattern": "^[^/~]+$",
+          "description": "Role stamp name. Must be unique within stamp."
+        },
+        "role": {
+          "type": "string",
+          "description": "Refers to a Role by name or internal reference.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/role/properties/name"
+            },
+            {
+              "$ref": "#/definitions/internalReference"
+            }
+          ]
+        },
+        "boundary": {
+          "type": "string",
+          "description": "(Optional) Refers to parent Boundary by name or internal reference.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/boundary/properties/name"
+            },
+            {
+              "$ref": "#/definitions/internalReference"
+            }
+          ]
+        },
+        "resources": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Array of resource-ids that are bound to this Role in this Environment."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the role stamp."
+        }
+      },
+      "required": [ "role", "name" ],
+      "additionalProperties": true
+    },
+    "physicalLink": {
+      "type": "object",
+      "description": "A description of the call dependency between role stamps.",
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Refers to the physical artifact initiating the call.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/roleStamp/properties/name"
+            },
+            {
+              "$ref": "#/definitions/trafficManager/properties/name"
+            },
+            {
+              "$ref": "#/definitions/internalReference"
+            }
+          ]
+        },
+        "targets": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/physicalLinkTarget" },
+          "description": "Refers to the other physical artifacts that are called from the source."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the role stamp link."
+        }
+      },
+      "required": [ "source", "targets" ],
+      "additionalItems": false
+    },
+    "physicalLinkTarget": {
+      "type": "object",
+      "description": "The properties for a target of a call from one role stamp to another.",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "target": {
+          "type": "string",
+          "description": "Refers to a physical artifact called from the source.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/roleStamp/properties/name"
+            },
+            {
+              "$ref": "#/definitions/trafficManager/properties/name"
+            },
+            {
+              "$ref": "#/definitions/cdn/properties/name"
+            },
+            {
+              "$ref": "#/definitions/internalReference"
+            }
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional)A description for the call."
+        }
+      },
+      "required": [ "target" ],
+      "additionalItems": false
+    },
+    "boundary": {
+      "type": "object",
+      "description": "Logical grouping of role stamps within a stamp.",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "pattern": "^[^/~]+$",
+          "description": "Boundary name. Must be unique within stamp."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the boundary."
+        }
+      },
+      "required": [ "name" ],
+      "additionalProperties": true
+    },
+    "stamp": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/idFormat" },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "pattern": "^[^/~]+$",
+          "description": "Stamp name. Must be unique within a Service."
+        },
+        "type": {
+          "type": "string",
+          "enum": [ "Prod", "NonProd" ],
+          "description": "Stamp Type, used for security boundary for management actions."
+        },
+        "serviceDefinition": {
+          "type": "string",
+          "description": "ServiceDefinition version that this stamp is currently associated with.",
+          "serviceDefinition": {
+            "type": "string",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/internalReference"
+              },
+              {
+                "$ref": "#/definitions/serviceDefinition/properties/version"
+              }
+            ]
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the stamp."
+        },
+        "boundaries": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/boundary" },
+          "description": "List of boundaries in this stamp."
+        },
+        "roleStamps": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/roleStamp" },
+          "description": "List of Role instances in this stamp."
+        },
+        "cdns": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/cdn" },
+          "description": "List of cdn instances in this stamp."
+        },
+        "trafficManagers": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/trafficManager" },
+          "description": "List of traffic managers in this stamp."
+        },
+        "physicalLinks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/physicalLink" },
+          "description": "List of physical links in this stamp."
+        },
+        "graphLayout": {
+          "type": "string",
+          "description": "(Optional) The graphical representation of the stamp."
+        }
+      },
+      "required": [ "name", "type", "serviceDefinition" ],
+      "additionalProperties": true
+    },
+    /* -------------------------------------------------------------
+    * Resouce Types
+    * -------------------------------------------------------------
+    */
+    "resource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Resource identifier which must be unique within the service model, example: \"1\". This value is used for referencing the resource within the service model.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/definitions/internalReference"
+            },
+            {
+              "$ref": "#/definitions/serviceDefinition/properties/version"
+            }
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "(Optional) Description of the resource."
+        }
+      },
+      "required": [ "id" ]
+    },
+    "azureResourceType": {
+      "type": "string",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "enum": [
+            "Microsoft.ApiManagement/service",
+            "Microsoft.AppService/apiapps",
+            "Microsoft.AppService/gateways",
+            "Microsoft.Automation/automationAccounts",
+            "Microsoft.Automation/automationAccounts/runbooks",
+            "microsoft.backup/BackupVault",
+            "Microsoft.Batch/batchAccounts",
+            "Microsoft.BingMaps/mapApis",
+            "Microsoft.BizTalkServices/BizTalk",
+            "Microsoft.Cache/Redis",
+            "Microsoft.Cdn/profiles",
+            "Microsoft.Cdn/profiles/endpoints",
+            "Microsoft.CertificateRegistration/certificateOrders",
+            "Microsoft.ClassicCompute/domainNames",
+            "Microsoft.ClassicCompute/virtualMachines",
+            "Microsoft.ClassicNetwork/networkSecurityGroups",
+            "Microsoft.ClassicNetwork/reservedIps",
+            "Microsoft.ClassicNetwork/virtualNetworks",
+            "Microsoft.ClassicStorage/storageAccounts",
+            "Microsoft.CognitiveServices/accounts",
+            "Microsoft.Compute/availabilitySets",
+            "Microsoft.Compute/virtualMachines",
+            "Microsoft.Compute/virtualMachines/extensions",
+            "Microsoft.Compute/virtualMachineScaleSets",
+            "Microsoft.DataFactory/dataFactories",
+            "Microsoft.DataLakeAnalytics/accounts",
+            "Microsoft.DataLakeStore/accounts",
+            "Microsoft.Devices/IotHubs",
+            "Microsoft.DevTestLab/labs",
+            "Microsoft.DevTestLab/labs/virtualMachines",
+            "Microsoft.DocumentDb/databaseAccounts",
+            "Microsoft.EventHub/namespaces",
+            "Microsoft.HDInsight/clusters",
+            "microsoft.insights/alertrules",
+            "microsoft.insights/autoscalesettings",
+            "microsoft.insights/components",
+            "microsoft.insights/webtests",
+            "Microsoft.KeyVault/vaults",
+            "Microsoft.Logic/integrationAccounts",
+            "Microsoft.Logic/workflows",
+            "Microsoft.MachineLearning/Workspaces",
+            "Microsoft.Media/mediaservices",
+            "microsoft.mobileengagement/appcollections",
+            "microsoft.mobileengagement/appcollections/apps",
+            "Microsoft.Network/connections",
+            "Microsoft.Network/dnszones",
+            "Microsoft.Network/expressRouteCircuits",
+            "Microsoft.Network/loadBalancers",
+            "Microsoft.Network/localNetworkGateways",
+            "Microsoft.Network/networkInterfaces",
+            "Microsoft.Network/networkSecurityGroups",
+            "Microsoft.Network/publicIPAddresses",
+            "Microsoft.Network/routeTables",
+            "Microsoft.Network/trafficmanagerprofiles",
+            "Microsoft.Network/virtualNetworkGateways",
+            "Microsoft.Network/virtualNetworks",
+            "Microsoft.NotificationHubs/namespaces",
+            "Microsoft.NotificationHubs/namespaces/notificationHubs",
+            "Microsoft.OperationalInsights/workspaces",
+            "Microsoft.Portal/dashboards",
+            "Microsoft.PortalSdk/rootResources",
+            "Microsoft.PowerBI/workspaceCollections",
+            "Microsoft.RecoveryServices/vaults",
+            "Microsoft.Scheduler/jobcollections",
+            "Microsoft.Search/searchServices",
+            "Microsoft.ServiceBus/namespaces",
+            "Microsoft.ServiceFabric/clusters",
+            "microsoft.siterecovery/SiteRecoveryVault",
+            "Microsoft.Sql/servers",
+            "Microsoft.Sql/servers/databases",
+            "Microsoft.Sql/servers/elasticpools",
+            "Microsoft.Storage/storageAccounts",
+            "Microsoft.StreamAnalytics/streamingjobs",
+            "microsoft.support/supportTickets",
+            "microsoft.visualstudio/account",
+            "Microsoft.VisualStudio/account/project",
+            "Microsoft.Web/certificates",
+            "Microsoft.Web/classicMobileServices",
+            "Microsoft.Web/connections",
+            "Microsoft.Web/hostingEnvironments",
+            "Microsoft.Web/serverFarms",
+            "Microsoft.Web/sites",
+            "Microsoft.Web/sites/slots"
+          ]
+        }
+      ],
+      "description": "Azure resource type"
+    },
+    "autopilotInfrastructure": {
+      "type": "object",
+      "description": "Autopilot infrastructure associated with the service.",
+      "properties": {
+        "depots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "string",
+                    "enum": [ "APGold", "SearchGold", "PFGold", "IEBGold" ]
+                  }
+                ],
+                "description": "AP source depot name"
+              },
+              "clusters": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "AP Cluster name"
+                    },
+                    "environments": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "AP Environment name"
+                          },
+                          "resources": {
+                            "type": "array",
+                            "items": {
+                              "allOf": [
+                                { "$ref": "#/definitions/resource" }
+                              ],
+                              "properties": {
+                                "machineFunction": {
+                                  "type": "string",
+                                  "description": "AP Machine Function"
+                                }
+                              },
+                              "required": [ "machineFunction" ]
+                            },
+                            "description": "AP machine functions associated with the Service."
+                          }
+                        },
+                        "required": [ "name", "resources" ]
+                      },
+                      "description": "AP environments associated with the Service."
+                    }
+                  },
+                  "required": [ "name", "environments" ]
+                },
+                "description": "AP clusters associated with the Service."
+              }
+            },
+            "required": [ "name", "clusters" ]
+          },
+          "description": "Autopilot source depot instances associated with the Service."
+        }
+      },
+      "required": [ "depots" ]
+    },
+    "azureInfrastructure": {
+      "type": "object",
+      "description": "Azure infrastructure associated with the service.",
+      "properties": {
+        "subscriptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Azure subscription id"
+              },
+              "resourceGroups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Azure resource group name"
+                    },
+                    "resourceTypes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "$ref": "#/definitions/azureResourceType"
+                          },
+                          "resources": {
+                            "type": "array",
+                            "items": {
+                              "allOf": [
+                                { "$ref": "#/definitions/resource" }
+                              ],
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "description": "Azure resource name"
+                                }
+                              },
+                              "required": [ "name" ]
+                            },
+                            "description": "Azure resources associated with the service."
+                          }
+                        },
+                        "required": [ "type", "resources" ]
+                      },
+                      "description": "Azure resource types associated with the service."
+                    }
+                  },
+                  "required": [ "name", "resourceTypes" ]
+                },
+                "description": "Azure resource groups associated with the Service."
+              }
+            },
+            "required": [ "id", "resourceGroups" ]
+          },
+          "description": "Azure subscriptions associated with the Service."
+        }
+      },
+      "required": [ "subscriptions" ]
+    },
+    "fullyQualifiedInfrastructure": {
+      "type": "object",
+      "description": "Fully qualified infrastructure associated with the service.",
+      "properties": {
+        "resources": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              { "$ref": "#/definitions/resource" }
+            ],
+            "properties": {
+              "fqdn": {
+                "type": "string",
+                "description": "Fully qualified domain name of the resource"
+              }
+            },
+            "required": [ "fqdn" ]
+          },
+          "description": "Fully qualified resources associated with the service."
+        }
+      },
+      "required": [ "resources" ]
+    },
+    "cosmosInfrastructure": {
+      "type": "object",
+      "description": "Cosmos infrastructure associated with the service.",
+      "properties": {
+        "clusters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "enum": [ "cosmos08", "cosmos09", "cosmos11", "cosmos12", "cosmos13", "cosmos14", "cosmos15" ]
+                  }
+                ]
+              },
+              "virtualClusters": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "resources": {
+                      "type": "array",
+                      "items": {
+                        "allOf": [
+                          { "$ref": "#/definitions/resource" }
+                        ],
+                        "properties": {
+                          "directoryPath": {
+                            "type": "string",
+                            "pattern": "^(?:/[^/]+)+$",
+                            "description": "The directory path where the Cosmos resources reside"
+                          }
+                        },
+                        "required": [ "directoryPath" ]
+                      },
+                      "description": "Directory resources associated with the service."
+                    }
+                  },
+                  "required": [ "name", "resources" ]
+                },
+                "description": "Cosmos virtual clusters associated with the Service."
+              }
+            },
+            "required": [ "name", "virtualClusters" ]
+          },
+          "description": "Cosmos physical clusters associated with the Service."
+        }
+      },
+      "required": [ "clusters" ]
+    },
+    /* -------------------------------------------------------------
+     * Extensibility: use the following template for each
+     * new resource type
+     * -------------------------------------------------------------
+    "XYZResource": {
+      "properties": { ... }
+    },
+    */
+
+    /* -------------------------------------------------------------
+     * Infrastructure
+     * -------------------------------------------------------------
+     */
+    "infrastructure": {
+      "type": "object",
+      "properties": {
+        "autopilot": {
+          "$ref": "#/definitions/autopilotInfrastructure"
+        },
+        "azure": {
+          "$ref": "#/definitions/azureInfrastructure"
+        },
+        "discrete": {
+          "$ref": "#/definitions/fullyQualifiedInfrastructure"
+        },
+        "akamai": {
+          "$ref": "#/definitions/fullyQualifiedInfrastructure"
+        },
+        "level3": {
+          "$ref": "#/definitions/fullyQualifiedInfrastructure"
+        },
+        "gtm": {
+          "$ref": "#/definitions/fullyQualifiedInfrastructure"
+        },
+        "atmClassic": {
+          "$ref": "#/definitions/fullyQualifiedInfrastructure"
+        },
+        "cosmos": {
+          "$ref": "#/definitions/cosmosInfrastructure"
+        }
+
+        /* -------------------------------------------------------------
+         * Extensibility: add properties per resource-type
+         * -------------------------------------------------------------
+        "xyz": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/XYZResource" },
+          "description": "..."
+        },
+        */
+      },
+      "additionalProperties": true
+    },
+    "serviceModel": {
+      "description": "Represents a service model for DSM.",
+      "properties": {
+        "type": {
+          "enum": [ "dsm/serviceModel/v3.0" ]
+        },
+        /* TODO: Area-Path/Owner */
+        "name": {
+          "type": "string",
+          "maxLength": 100,
+          "pattern": "^[^/~]+$",
+          "description": "Unique Service name."
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Friendly Title of the Service. No restrictions on character or white space."
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 1000,
+          "description": "Summery description of the purpose and functionality of the Service."
+        },
+        "visibility": {
+          "type": "string",
+          "enum": [ "All", "Owner" ],
+          "default": "Owner",
+          "description": "Default visibility of the Service in the Catalog. All: Visible to all. Owner: Visible to owner-only."
+        },
+        "vsoCatalogIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "description": "Ids of the Vso WorkItem used to catalog Services (Supported for backward compatibility)."
+          },
+          "description": "Vso catalog ids associated with the service."
+        },
+        "activeDefinition": {
+          "type": "string",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/internalReference"
+            },
+            {
+              "$ref": "#/definitions/serviceDefinition/properties/version"
+            }
+          ],
+          "description": "The version of the definition that is current or default."
+        },
+        "definitions": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/serviceDefinition" },
+          "description": "Versioned snapshots of the service composition."
+        },
+        "stamps": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/stamp" },
+          "description": "List of stamps for this services. A stamp represents the physical layout of a single service instance."
+        },
+        "infrastructure": {
+          "$ref": "#/definitions/infrastructure",
+          "description": "Physical resources attached to this Service."
+        }
+      },
+      "required": [ "name" ]
+    }
+  },
+
+  /* -- Root Node -- */
+  "allOf": [
+    { "$ref": "#/definitions/serviceModel" }
+  ]
+}

@@ -1,0 +1,125 @@
+﻿{
+  "models": [
+    {
+      "name": "First",
+      "type": "Custom",
+      "children": [
+        {
+          "id": 1,
+          "path": "some-value",
+          "active": true
+        },
+        {
+          "id": 2,
+          "path": "some other value",
+          "active": false
+        }
+      ]
+    },
+    {
+      "name": "Second",
+      "type": "Green",
+      "children": [
+        {
+          "id": 3,
+          "path": "Foo",
+          "active": true
+        },
+        {
+          "id": 4,
+          "path": "Bar"
+        }
+      ]
+    },
+    {
+      "name": "Second",
+      "type": "Green",
+      "children": [
+        {
+          "id": 3,
+          "path": "Foo",
+          "active": true
+        },
+        {
+          "id": 4,
+          "path": "Bar"
+        }
+      ]
+    },
+    {
+      "name": "Second",
+      "type": "Green",
+      "children": [
+        {
+          "id": 3,
+          "path": "Foo",
+          "active": true
+        },
+        {
+          "id": 4,
+          "path": "Bar"
+        }
+      ]
+    },
+    {
+      "name": "Second",
+      "type": "Green",
+      "children": [
+        {
+          "id": 3,
+          "path": "Foo",
+          "active": true
+        },
+        {
+          "id": 4,
+          "path": "Bar"
+        }
+      ]
+    },
+    {
+      "name": "Second",
+      "type": "Green",
+      "children": [
+        {
+          "id": 3,
+          "path": "Foo",
+          "active": true
+        },
+        {
+          "id": 4,
+          "path": "Bar"
+        }
+      ]
+    },
+    {
+      "name": "Second",
+      "type": "Green",
+      "children": [
+        {
+          "id": 3,
+          "path": "Foo",
+          "active": true
+        },
+        {
+          "id": 4,
+          "path": "Bar"
+        }
+      ]
+    },
+    {
+      "name": "Second",
+      "type": "Green",
+      "children": [
+        {
+          "id": 3,
+          "path": "Foo",
+          "active": true
+        },
+        {
+          "id": 4,
+          "path": "Bar"
+        }
+      ]
+    }
+  ]
+}

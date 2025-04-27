@@ -1,0 +1,17 @@
+﻿{
+  "id": "http://schaemas.microsoft.com/atestschema",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "root": {
+      "type": "array",
+      "items": { "$ref": "/model" }
+      }
+    },
+    "model": { "title": "" }
+  },
+  "type": { "$ref": "#/definitions/root" },
+  "properties": {
+    "models": {"$ref": "/definitions/root"}
+  }
+}
+
