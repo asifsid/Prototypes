@@ -1,0 +1,18 @@
+<customapi uniquename="cr17a_NetDiag_TestUrl">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Tests a target url">
+    <label description="Tests a target url" languagecode="1033" />
+  </description>
+  <displayname default="NetDiag_TestUrl">
+    <label description="NetDiag_TestUrl" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>NetDiag_TestUrl</name>
+  <plugintypeid>
+    <plugintypeexportkey>cae22e34-625e-4bf1-a778-0be99017a9c7</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

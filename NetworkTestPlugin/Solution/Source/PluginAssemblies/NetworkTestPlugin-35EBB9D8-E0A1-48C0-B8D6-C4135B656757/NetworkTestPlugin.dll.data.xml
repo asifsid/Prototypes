@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="NetworkTestPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=649532fbec575583" PluginAssemblyId="35ebb9d8-e0a1-48c0-b8d6-c4135b656757" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/NetworkTestPlugin-35EBB9D8-E0A1-48C0-B8D6-C4135B656757/NetworkTestPlugin.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="NetworkTestPlugin.NetTestPlugin, NetworkTestPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=649532fbec575583" PluginTypeId="cae22e34-625e-4bf1-a778-0be99017a9c7" Name="NetworkTestPlugin.NetTestPlugin">
+      <FriendlyName>694865a9-b439-4cce-8c07-e03637b487e5</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>
