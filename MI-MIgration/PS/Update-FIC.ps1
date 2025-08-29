@@ -1,9 +1,15 @@
+ . ".\MigrationUtil.ps1"
+
  param (
     [Parameter(Mandatory=$true)]
-    [string]$EnvironmentId,
+    [string]$Org,
 
     [Parameter(Mandatory=$true)]
-    [string]$TenantId,
+    [string]$ManagedIdentityId,
+)
+
+ [Parameter(Mandatory=$true)]
+    [string]$EnvironmentId,
 
     [Parameter(Mandatory=$true)]
     [string]$CertPath,
@@ -17,7 +23,16 @@
 
     [Parameter(Mandatory=$false)]
     [string]$UpdateAppInTenantId = $TenantID  
-)
+
+$Org = Get-OrgUrl $Org
+
+$acessToken = Login-Dataverse $Ord
+$tenantId = Get-TenantId $acessToken
+
+$response = Invoke-DVGet -Uri "https://$Org/api/data/v9.2/WhoAmI"
+$environmentId = $response.OrganizationId
+
+
 
 $clusterAppIds = @{
     "Test" = "L5f3f5fVhEuUXYRgAT1Q4w"  # Test
