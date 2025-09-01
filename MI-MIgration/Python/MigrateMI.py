@@ -7,6 +7,16 @@ from migration_utils import DVHelper, GraphHelper, CertHelper, Console
 # FIC Name
 fic_name = "PPMI_FIC_V1"
 
+entra_issuers = {
+    "public": "login.microsoftonline.com",
+    "gcc": "login.microsoftonline.us",
+    "gcch": "login.microsoftonline.us",
+    "dod": "login.microsoftonline.us",
+    "usnat": "login.microsoftonline.us",
+    "ussec": "login.microsoftonline.us",
+    "cn": "login.partner.microsoftonline.cn",
+}
+
 def perform_fic_operations_graph(app_client_id, app_tenant_id, generate_fic):
     # Use msal + requests through GraphHelper to check and (optionally) add the FIC.
     
@@ -78,7 +88,7 @@ def main():
     parser.add_argument("--org", "-o", help="Dataverse org URL or org name (e.g., org.crm.dynamics.com or OrgName)", required=True)
     parser.add_argument("--managed-identity-id", "-m", help="Managed Identity ID (GUID) to migrate", required=True)
     parser.add_argument("--environment-type", "-e", help="Environment type (e.g., Test, PreProd, Prod)", required=False, default="Prod")
-    parser.add_argument("--sov-cloud", "-sov", help="Azure Sovereign Cloud (gov, cn, ...)", required=False, choices=["gov", "cn"])
+    parser.add_argument("--sov-cloud", "-s", help="Azure Sovereign Cloud (gcc, gcch, dod, usnat, ussec, cn, ...)", required=False, choices=["gcc", "gcch", "dod", "usnat", "ussec", "cn"])
     args = parser.parse_args()
 
     # Initialize all variables based on org url and managed identity id
@@ -134,23 +144,29 @@ def main():
             #read cert details
             subject, issuer, is_self_signed, sha256_hex = CertHelper.get_cert_info(cert_file)
             encoded_tenant_id = quote_plus(dv.tenant_id)
-            ppmiAppIds = {
+            ppmi_app_ids = {
                 "Test": "L5f3f5fVhEuUXYRgAT1Q4w", # Test
                 "PreProd": "CQSGf3JJtEi27nY2ePL7UQ", # PreProd
                 "Prod": "qzXoWDkuqUa3l6zM5mM0Rw", # Prod
             }
-            entraIssuers = {
-                "public": "login.microsoftonline.com",
-                "gov": "login.microsoftonline.us",
-                "cn": "login.partner.microsoftonline.cn",
+
+            fic_audiences = {
+                "public": "api://AzureADTokenExchange",
+                "gcc": "api://AzureADTokenExchange",
+                "gcch": "api://AzureADTokenExchangeUSGov",
+                "dod": "api://AzureADTokenExchangeUSGov",
+                "usnat": "api://AzureADTokenExchangeUSNat",
+                "ussec": "api://AzureADTokenExchangeUSSec",
+                "cn": "api://AzureADTokenExchangeChina",
             }
 
-            encoded_app_id = quote_plus(ppmiAppIds.get(environment_type, ""))
+            encoded_app_id = quote_plus(ppmi_app_ids[environment_type], "")
+            fic_aud = fic_audiences[cloud]
 
-            fic_iss = f"https://{entraIssuers.get(cloud)}/{dv.tenant_id}/v2.0"
+            fic_iss = f"https://{entra_issuers[cloud]}/{dv.tenant_id}/v2.0"
             cert_fmi = f"h/{sha256_hex}" if is_self_signed else f"i/{issuer}/s/{subject}"
             fic_sub = f"/eid1/c/pub/t/{encoded_tenant_id}/a/{encoded_app_id}/n/plugin/e/{environment_id}/{cert_fmi}"
-            return fic_iss, fic_sub
+            return fic_iss, fic_sub, fic_aud
 
         # Step 1: Check/Add FIC - decide if automatic or manual
         print(f"V1 FIC must be added to the Application {app_client_id} (in Tenant {app_tenant_id}) before updating the managed identity version to 1.")
